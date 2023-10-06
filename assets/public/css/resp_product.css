@@ -1,0 +1,38 @@
+@media (min-width:1024px) {
+    .menu-nav {
+        display: none;
+    }
+}
+
+
+/* CSS cho kích thước màn hình từ 740px đến 1024px */
+
+@media (max-width: 1024px) and (min-width: 740px) {
+    /* Điều chỉnh bố cục và căn chỉnh các phần tử trong phần header */
+    .list {
+        justify-content: center
+    }
+    .list .list_products {
+        width: 45%;
+    }
+}
+
+
+/* CSS cho kích thước màn hình nhỏ hơn 740px */
+
+@media (max-width: 740px) {
+    .list .list_products {
+        width: 100%;
+        padding: 30px;
+        margin: 20px 0;
+    }
+    .by {
+        padding: 0 40px;
+    }
+    .parameters {
+        padding: 0 40px;
+    }
+    #pruduct .sort {
+        top: 40px;
+    }
+}

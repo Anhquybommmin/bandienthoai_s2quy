@@ -1,0 +1,13 @@
+# Các tệp tạm thời và thư mục tạo bởi người dùng
+.DS_Store
+node_modules/
+build/
+.cache/
+
+# Các tệp cài đặt và khóa riêng tư
+.env
+config.json
+
+# Thư mục cài đặt và dữ liệu user
+app/settings/
+app/data/

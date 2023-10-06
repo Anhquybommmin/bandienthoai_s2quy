@@ -1,0 +1,215 @@
+@media (min-width:1024px) {
+    .menu-nav {
+        display: none;
+    }
+}
+
+
+/* CSS cho kích thước màn hình từ 740px đến 1024px */
+
+@media (max-width: 1024px) and (min-width: 740px) {
+    /* Điều chỉnh bố cục và căn chỉnh các phần tử trong phần header */
+    #head {
+        z-index: 1000;
+    }
+    #header .button {
+        display: none;
+    }
+    #header .icon {
+        display: none;
+    }
+    #sub-header {
+        height: auto;
+        width: 100%;
+    }
+    /* phầN nav */
+    #sub-header ul li {
+        display: block;
+        text-align: center;
+        color: #000;
+        margin: 0;
+        width: 100%;
+    }
+    #sub-header ul>li a {
+        color: #000;
+    }
+    #sub-header .nav {
+        display: block;
+        background-color: aliceblue;
+        width: 100%;
+    }
+    #sub-header .nav .hide {
+        display: none;
+    }
+    #sub-header .nav .hide:first-child {
+        display: block;
+    }
+    .form {
+        width: 60%;
+    }
+    /* menu */
+    .menu-nav {
+        padding: 30px 0;
+        float: right;
+        position: absolute;
+        right: 20px;
+        top: -20px;
+    }
+    .menu-nav a i {
+        font-size: 40px;
+        color: #000;
+    }
+    .nav li:hover .sub-nav {
+        width: 100%;
+        background-color: #ccc;
+    }
+    #sub-header .nav .active {
+        /* background-color: aqua; */
+        display: block;
+        overflow: hidden;
+        z-index: 1000;
+    }
+    /* footer */
+    #footer {
+        padding: 35px 30px;
+    }
+    #footer .footer3 input {
+        width: 80%;
+    }
+    .footer-end .icons {
+        top: 110px;
+    }
+    .footer-end p {
+        padding: 10px 40px;
+        margin-left: 0;
+    }
+}
+
+
+/* CSS cho kích thước màn hình nhỏ hơn 740px */
+
+@media (max-width: 740px) {
+    /* Điều chỉnh bố cục và căn chỉnh các phần tử trong phần header */
+    #head {
+        z-index: 1000;
+    }
+    #header .button {
+        display: none;
+    }
+    #header .icon {
+        display: ;
+    }
+    #sub-header {
+        height: auto;
+        width: 100%;
+    }
+    /* phầN nav */
+    #sub-header ul li {
+        display: block;
+        text-align: center;
+        color: #000;
+        margin: 0;
+        width: 100%;
+    }
+    #sub-header ul>li a {
+        color: #000;
+    }
+    #sub-header .nav {
+        display: block;
+        background-color: aliceblue;
+        width: 100%;
+    }
+    #sub-header .nav .hide {
+        display: none;
+    }
+    #sub-header .nav .hide:first-child {
+        display: block;
+    }
+    .form {
+        width: 50%;
+    }
+    /* menu */
+    .menu-nav {
+        padding: 30px 0;
+        float: right;
+        position: absolute;
+        right: 20px;
+        top: -20px;
+    }
+    .menu-nav a i {
+        font-size: 40px;
+        color: #000;
+    }
+    .nav li:hover .sub-nav {
+        width: 100%;
+        background-color: #ccc;
+    }
+    #sub-header .nav .active {
+        /* background-color: aqua; */
+        display: block;
+        overflow: hidden;
+        z-index: 1000;
+    }
+    /* footer */
+    .footer {
+        z-index: -1;
+    }
+    #footer {
+        padding: 50px 30px;
+        flex-direction: column;
+        text-align: center;
+    }
+    #footer h2 {
+        font-size: 30px;
+        margin-top: 30px;
+        margin-bottom: 15px;
+    }
+    #footer .footer2 {
+        display: none;
+    }
+    #footer .footer4 {
+        display: none;
+    }
+    #footer .footer3 button {
+        margin: 10px auto;
+    }
+    .footer-end {
+        height: 240px;
+    }
+    .footer-end p {
+        text-align: center;
+        font-size: 12px;
+        letter-spacing: 1.6px;
+        font-weight: 100;
+        margin: 0;
+        padding: 20px 40px;
+        padding-top: 20px;
+    }
+    .footer-end .icons {
+        position: static;
+        float: right;
+        margin-right: 40px;
+        margin-bottom: 40px;
+    }
+    /*
+    /* search */
+    .form {
+        margin: 0;
+    }
+    #header .icon {
+        position: absolute;
+        top: 30px;
+        right: 50px;
+    }
+    .form input.hidden {
+        display: none;
+    }
+    .form .search {
+        position: absolute;
+        top: 30px;
+    }
+    .img-logo img {
+        margin-top: 10px;
+        height: 50px;
+    }
+}

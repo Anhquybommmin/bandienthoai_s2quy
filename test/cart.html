@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang web của bạn</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+
+<body>
+    <h1>Trang web của bạn</h1>
+    <p>Nội dung trang web.</p>
+
+    <!-- Thêm sản phẩm và mở modal-card -->
+    <button id="addProductBtn">Thêm sản phẩm</button>
+    <button id="openModalBtn">Xem giỏ hàng</button>
+
+    <!-- Chèn modal-card vào trang web -->
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Giỏ hàng</h2>
+            <ul id="cartItems"></ul>
+            <button id="checkoutBtn">Thanh toán</button>
+        </div>
+    </div>
+
+    <!-- Sử dụng mã script.js -->
+    <script src="cart.js"></script>
+
+    <script>
+        const cartItems = []; // Danh sách sản phẩm trong giỏ hàng
+
+        // Sử dụng callback để thêm sản phẩm vào giỏ hàng
+        document.getElementById('addProductBtn').addEventListener('click', () => {
+            const newProduct = {
+                name: 'Sản phẩm mẫu',
+                price: 100000, // Giá sản phẩm
+                image: 'path/to/image.jpg', // Đường dẫn tới hình ảnh sản phẩm
+                quantity: 1 // Số lượng sản phẩm
+            };
+            cartItems.push(newProduct);
+            alert(`Đã thêm ${newProduct.name} vào giỏ hàng.`);
+        });
+
+        // Sử dụng callback để xem giỏ hàng
+        document.getElementById('openModalBtn').addEventListener('click', () => {
+            openModalCard(() => {
+                // Xử lý callback ở đây (thanh toán hoặc xử lý giỏ hàng)
+                alert('Đã thanh toán hoặc xử lý giỏ hàng.');
+            }, cartItems);
+        });
+    </script>
+</body>
+
+</html>

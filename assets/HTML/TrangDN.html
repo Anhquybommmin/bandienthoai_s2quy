@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/css/dangnhap.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="stylesheet" href="../public/css/fontawesome-free-6.1.2-web/css/all.css">
+    <link rel="stylesheet" href="../public/css/responsive.css">
+
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/checkbug.js"></script>
+    <script src="../js/show-hide.js"></script>
+</head>
+
+
+<body>
+    <!-- form đăng nhập -->
+
+    <div id="wrapper">
+        <form action="#" id="form-login">
+            <h1 class="form-heading"> Đăng nhập</h1>
+            <div class="form-group">
+                <i class="far fa-user"></i>
+                <input type="text" class="form-input" placeholder="Tên đăng nhập" id="username">
+            </div>
+            <div class="form-group">
+                <i class="fas fa-key"></i>
+                <input type="password" class="form-input" placeholder="Mật khẩu" id="password">
+                <div id="eye">
+                    <i class="far fa-eye"></i>
+                </div>
+            </div>
+            <input type="submit" value="ĐĂNG NHẬP" class="form-submit">
+            <input type="button" value="ĐĂNG KÝ" class="form-submit" id="btn2">
+            <a href="../index.html"><input type="button" value="QUAY LẠI TRANG CHỦ" class="form-submit" id="btn2"></a>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('form-login').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            const storedUserInfo = JSON.parse(localStorage.getItem(username));
+            if (storedUserInfo && storedUserInfo.password === password) {
+                alert('Đăng nhập thành công! Chuyển hướng tới trang chủ...');
+                // Chuyển hướng tới trang chính sau đăng nhập thành công
+                window.location.href = '..//index.html'; // Đường dẫn đến trang chủ
+            } else {
+                alert('Tên đăng nhập hoặc mật khẩu không đúng. Vui lòng thử lại.');
+            }
+        });
+    </script>
+    <!-- form đăng ký -->
+    <div class="modal fade" role="dialog" id="myModal">
+        <div class="modal-dialog" style="">
+
+            <div class="modal-content">
+                <input type="button" name="thoat" value="X" id="thoat" class="bg-dark text-white">
+                <div class="modal-dialog">
+                    <h2 class="text-center">ĐĂNG KÝ TÀI KHOẢN</h2>
+                </div>
+
+                <div class="modal-body">
+                    <form role="form" class="form-horizontal" style="margin-top: 10px;">
+                        <label for="tenDN" class="control-label col-xs-3">Tên đăng nhập:</label>
+                        <div class="col-xs-9">
+                            <input type="text" id="tenDN" class="form-control">
+                            <span class="text-danger" id="tbTenDN">*</span>
+                        </div>
+
+                        <label for="MK" class="control-label col-xs-3">Mật khẩu:</label>
+                        <div class="col-xs-9">
+                            <input type="password" id="MK" class="form-control">
+                            <span class="text-danger" id="tbMK">*</span>
+                        </div>
+
+                        <label for="NLMK" class="control-label col-xs-3">Nhập lại mật khẩu:</label>
+                        <div class="col-xs-9">
+                            <input type="password" id="NLMK" class="form-control">
+                            <span class="text-danger" id="tbNLMK">*</span>
+                        </div>
+
+
+
+                        <label for="Email" class="control-lable col-xs-3">Email:</label>
+                        <div class="col-xs-9">
+                            <input type="text" id="Email" class="form-control">
+                            <span class="text-danger" style="color:red;" id="tbEmail">*</span>
+                        </div>
+
+                        <button class="btn btn-sucess btn-group-justified" id="Save" type="button" style="color:white; background-color:rgb(10, 10, 10);width:100%">
+                              Đăng ký
+                            </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // đăng nhập 
+        // Xử lý sự kiện khi người dùng bấm nút "Đăng nhập"
+        document.getElementById('form-login').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Kiểm tra xem tên đăng nhập và mật khẩu có trùng khớp trong LocalStorage hay không
+            const storedUserInfo = JSON.parse(localStorage.getItem(username));
+            if (storedUserInfo && storedUserInfo.password === password) {
+                alert('Đăng nhập thành công! Chuyển hướng tới trang chủ...');
+                // Chuyển hướng tới trang chính sau đăng nhập thành công
+                window.location.href = '../index.html';
+            } else {
+                alert('Tên đăng nhập hoặc mật khẩu không đúng. Vui lòng thử lại.');
+            }
+        });
+    </script>
+    <script>
+        // Xử lý sự kiện khi người dùng bấm nút "Đăng ký"
+        document.getElementById('Save').addEventListener('click', function() {
+            const username = document.getElementById('tenDN').value;
+            const password = document.getElementById('MK').value;
+            const confirmPassword = document.getElementById('NLMK').value;
+            const email = document.getElementById('Email').value;
+
+            // Kiểm tra mật khẩu và xác nhận mật khẩu
+            if (password !== confirmPassword) {
+                alert('Mật khẩu không khớp. Vui lòng nhập lại.');
+                return;
+            }
+
+            // Kiểm tra xem tên đăng nhập đã tồn tại trong LocalStorage hay chưa
+            if (localStorage.getItem(username)) {
+                alert('Tên đăng nhập đã tồn tại. Vui lòng chọn tên khác.');
+            } else {
+                // Lưu thông tin đăng ký vào LocalStorage
+                const userInfo = {
+                    username: username,
+                    password: password,
+                    email: email
+                };
+                localStorage.setItem(username, JSON.stringify(userInfo));
+                alert('Đăng ký thành công! Bạn có thể đăng nhập bằng tên đăng nhập và mật khẩu đã đăng ký.');
+                window.location.href = './TrangDN.html';
+            }
+        });
+
+        // Xử lý sự kiện khi người dùng bấm nút "X" để đóng biểu mẫu đăng ký
+        document.getElementById('thoat').addEventListener('click', function() {
+            $('#myModal').modal('hide');
+        });
+    </script>
+</body>
+
+</html>

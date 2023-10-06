@@ -1,0 +1,46 @@
+#content {
+    margin-top: calc(80px + 58px);
+}
+
+#giohang-hd {
+    height: 100px;
+    background-color: rgb(191, 118, 23);
+    width: 100%;
+}
+
+.sub-giohang {
+    display: flex;
+}
+
+.box1 {
+    width: 30%;
+    display: flex;
+}
+
+.box1>i {
+    line-height: 100px;
+    margin: 0 25px;
+    font-size: 30px;
+    color: brown;
+}
+
+.box1 h2 {
+    margin-right: 10px;
+}
+
+.text-giohang {}
+
+.text-giohang {}
+
+.input-gm {
+    display: flex;
+}
+
+.input-gm>input {
+    padding-right: 200px;
+    padding-top: -50px;
+}
+
+.nut-input {}
+
+#acticle {}
